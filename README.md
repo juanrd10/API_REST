@@ -2,6 +2,9 @@
 
 Proyecto hecho para la segunda prueba de Malaga y Barcelona.
 
+## Aclaraciones:
+Después de demasiado tiempo durante la prueba intentando hacer que funcione como una API rest  no lo consigo. Me quedan 20 minutos pero no pierdo la esperanza.
+
 ## Uso en (MacOX):
 
 ### Pre-requisitos 📋
