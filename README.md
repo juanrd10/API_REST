@@ -2,8 +2,11 @@
 
 Proyecto hecho para la segunda prueba de Malaga y Barcelona.
 
-## Aclaraciones:
-Después de demasiado tiempo durante la prueba intentando hacer que funcione como una API rest  no lo consigo. Me quedan 20 minutos pero no pierdo la esperanza.
+## Endpoints:
+Para acceder a estos antes debes entrar por el navegador y autenticarte.
+1. GET localhost:3000/rest/expertises/[login or ID] -> Devuelve en JSON las expertises de un usuario.
+2. 
+3. 
 
 ## Uso en (MacOX):
 
