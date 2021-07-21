@@ -22,6 +22,7 @@
 					</div>
 					<div class="col-md-1"></div>
 			</div>
+			<% if (me.id) { %>
 			<div class="row">
 				<div class="col-lg-1"></div>
 				<div class="col-lg-2">
@@ -127,12 +128,13 @@
 					</table>
 				</div>
 			</div>
+			<% } else { %>
 			<div class="row">
-				<div class="col-md-1"></div>
-				<div class="col-md-3" id="credits">
-					<p>By Juanrodr bassed on Iromero's code</p>
+				<div class="col-md-9 offset-1">
+					<h1>You are entring a fake login or id</h1>
 				</div>
 			</div>
+			<% } %>
 		</div>
 	</body>
 </html>
