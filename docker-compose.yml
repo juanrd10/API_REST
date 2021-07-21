@@ -1,0 +1,12 @@
+version: "3.1"
+services:
+    app:
+        build: .
+        image: api_server
+        container_name: api_server
+        restart: always
+        ports:
+            - 3000:3000
+        volumes:
+            - .:/app
+        tty: true
