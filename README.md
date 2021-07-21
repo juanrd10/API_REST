@@ -5,8 +5,8 @@ Proyecto hecho para la segunda prueba de Malaga y Barcelona.
 ## Endpoints:
 Para acceder a estos antes debes entrar por el navegador y autenticarte.
 1. GET localhost:3000/rest/expertises/[login or ID] -> Devuelve en JSON las expertises de un usuario.
-2. 
-3. 
+2. GET localhost:3000/rest/personal/[login or ID] -> Devuelve en JSON la info de un usuario.
+3. GET localhost:3000/rest/sch_record/[login or ID] -> Devuelve en JSON la info de los proyectos hechos por un usuario.
 
 ## Uso en (MacOX):
 
