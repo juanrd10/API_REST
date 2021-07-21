@@ -1,0 +1,121 @@
+body
+{
+ margin:0px auto;
+ padding:0px;
+ text-align:center;
+ width:100%;
+ font-family: "Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+ background-color:#000000;
+}
+#header
+{
+ margin:0px auto;
+ padding:0px;
+ text-align:center;
+ height:70px;
+ line-height:70px;
+}
+#header li
+{
+ display:inline-block;
+ margin-right:25px;
+ font-size:17px;
+ color:#ebeb00;
+ font-weight:bold;
+ cursor:pointer;
+}
+#header #site_name
+{
+ text-align:left;
+ font-size:35px;
+ margin-left:20px;
+}
+
+#test,#endpoints,#inputs,#statics
+{
+	margin-top:20px;
+	height: auto;
+	width:90%;
+	margin-left:5%;
+	padding:10px;
+	padding-left: 100px;
+	padding-right: 100px;
+	box-sizing:border-box;
+	background-color:#484848;
+	border-radius:10px;
+	color:white;
+}
+#inputs h1
+{
+ font-size:40px;
+}
+#inputs p
+{
+ font-size:20px;
+}
+#test p
+{
+ font-size:20px;
+}
+#endpoints input[type="text"]
+{
+ width:250px;
+ height:35px;
+ padding-left:10px;
+ float:left;
+ margin-left:80px;
+ border:none;
+}
+
+a{
+	width: 100%;
+}
+
+#credits {
+	color: white;
+}
+
+.button {
+	margin: 2px;
+	width: 100%;
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 14px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background-color: #484848;
+	border: none;
+	border-radius: 15px;
+}
+
+.button:hover {background-color: #000000}
+
+.button:active {
+	background-color: #ebeb00;
+	box-shadow: 0 5px rgb(0, 0, 0);
+	transform: translateY(4px);
+}
+
+input[type=text] {
+	width: 100%;
+	align-content: center;
+	vertical-align: middle;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+.get_btn {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.inp_data {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}

@@ -1,27 +1,98 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link href="https://profile.intra.42.fr/assets/42_logo_black-684989d43d629b3c0ff6fd7e1157ee04db9bb7a73fba8ec4e01543d650a1c607.png" rel="icon" type="image/png">
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<script src="./js/print.js" type="text/javascript"></script>
+	<script src="./js/index.js" type="text/javascript"></script>
+	<script src="./js/changers.js" type="text/javascript"></script>
+    <title>API REST!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+	<div class="row">
+		<div class="col-md-1"></div>
+			<div class="col-md-4" id="header">
+				<a href="http://localhost:3000/"><li id="site_name">42API HOME</li></a>
+			</div>
+			<div class="col-md-2" id="header">
+				<a href="http://localhost:3000/static/personal/me"><li id="site_name">Personal</li></a>
+			</div>
+			<div class="col-md-4" id="header">
+				<a href="http://localhost:3000/static/expertises/66024"><li id="site_name">Expertises</li></a>
+			</div>
+			<div class="col-md-1"></div>
+	</div>
+	<div id="inputs">
+		<h1>Input here the info</h1>
+		<div class="inp_data">
+			<div>
+				<input class="" type="text" placeholder="Enter login" id="nw_login" name="nw_login">
+				<input class="button" type="submit" value="Change Login" onclick="change_login()">
+			</div>
+			<div>
+				<input type="text" id="nw_campus" placeholder="Enter Campus" name="nw_campus">
+				<input class="button" type="submit" value="Change Campus" onclick="change_campus()">
+			</div>
+		</div>
+		<div class="inp_data">
+			<div>
+				<input type="text" id="nw_event" placeholder="Enter Event ID" name="nw_event">
+				<input class="button" type="submit" value="Change Event" onclick="change_event()">
+			</div>
+			<div>
+				<input type="text" id="nw_cursus" placeholder="Enter Cursus ID" name="nw_cursus">
+				<input class="button" type="submit" value="Change Cursus" onclick="change_cursus()">
+			</div>
+		</div>
+	</div>
+	<div id="statics">
+		<h1>Some useful statics</h1>
+		<h3>Remember enter the info before</h3>
+		<div class="get_btn">
+			<button class="button" id="sta-log-btn" onclick="get_petition('static_login')">Get Static Login Info</button>
+			<button class="button" id="sta-exp-btn" onclick="get_petition('static_expert')">Get Expertises of the login</button>
+		</div>
+		<br>
+		<div>
+			<div id="return_info"></div>
+		</div>
+	</div>
+	<div id="endpoints">
+		<h1>Some useful endpoints</h1>
+		<h3>Remember enter the info before</h3>
+		<div class="get_btn">
+			<button class="button" id="coa-btn" onclick="get_petition('users')">Get login info</button>
+			<button class="button" id="campus-btn" onclick="get_petition('campus')">Get campus info</button>
+			<button class="button" id="envents-btn" onclick="get_petition('events')">Search event</button>
+		</div>
+		<div class="get_btn">
+			<button class="button" id="coa-btn" onclick="get_petition('event_asist')">Get Users Event</button>
+		</div>
+		<br>
+		<div>
+			<div id="return_info"></div>
+		</div>
+	</div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
+	<div id="test">
+		<h1>Enter any endpoint</h1><h3>Example: /v2/campus</h3>
+		<div class="inp_data">
+			<input type="text" id="nw_test" placeholder="/v2/..." name="nw_test">
+			<input class="button" type="submit" value="Change Test" onclick="change_test()">
+			<input class="button" type="submit" value="Do Call" onclick="get_petition('test')">
+		</div>
+		<h3>The response is given by console</h3>
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-3" id="credits">
+			<p>By Juanrodr</p>
+		</div>
+	</div>
+</body>
 </html>

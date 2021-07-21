@@ -13,6 +13,54 @@ app.get('/', async(req, res) =>{
 	res.redirect('https://api.intra.42.fr/oauth/authorize?client_id=' + process.env. CLIENT_ID + '&redirect_uri=http%3A%2F%2F' + process.env.IP + '%3A3000%2Findex&response_type=code')
 })
 
+app.get('/static/personal/me', async(req, res) =>{
+	const response = await fetch("https://api.intra.42.fr/v2/me", opt_get, (error, meta, body)=>{
+		const data = JSON.parse(body.toString())
+		console.log("/v2/me -> " + token);
+		res.render(__dirname + '/public/static/personal.ejs', {me: data, req_ret:''})
+	})
+})
+
+app.get('/static/personal/:id', async(req, res) =>{
+	console.log(req.params.id)
+	const response = await fetch("https://api.intra.42.fr/v2/users/" + req.params.id , opt_get, (error, meta, body)=>{
+		const data = JSON.parse(body.toString())
+		console.log("/v2/me -> " + token);
+		res.render(__dirname + '/public/static/personal.ejs', {me: data, req_ret:''})
+	})
+})
+
+app.get('/static/personal/:id', async(req, res) =>{
+	console.log(req.params.id)
+	const response = await fetch("https://api.intra.42.fr/v2/users/" + req.params.id , opt_get, (error, meta, body)=>{
+		const data = JSON.parse(body.toString())
+		console.log("/v2/me -> " + token);
+		res.render(__dirname + '/public/static/personal.ejs', {me: data, req_ret:''})
+	})
+})
+
+app.get('/static/expertises/:id', async(req, res) =>{
+	const response = await fetch("https://api.intra.42.fr/v2/users/" + req.params.id + "/expertises_users", opt_get, (error, meta, body)=>{
+		console.log(req.params.id)
+		console.log(body)
+		const data = JSON.parse(body.toString())
+		console.log("hhskfhakjkf")
+		console.log(data);
+		next = meta.responseHeaders.link
+		if (next)
+		{
+			let next_index = next.lastIndexOf("https:")
+			let last = next.lastIndexOf(">")
+			next = next.substring(next_index, last);
+			console.log(next)
+			console.log(next_index)
+		}
+		console.log("/v2/expertises/" + req.params.id + " -> " + token);
+		res.render(__dirname + '/public/static/expertises.ejs', {expertises: data, req_ret:''})
+	})
+})
+
+
 app.get('/index?*', async(req, res) =>{
 	console.log("hola");
 	let index = req.url.indexOf("?")
@@ -48,6 +96,18 @@ app.get('/app/token', async(req, res) =>{
 		}
 		return await res.json(data)
 	})
+})
+
+app.get('/app/call', async(req, res) =>{
+	const url = req.url
+	console.log('the token to the call is -> ' + token)
+	let index = url.indexOf("?");
+	link = req.url.substring(index + 1, url.length);
+	const response = await fetch("https://api.intra.42.fr" + link , opt_get, (error, meta, body)=>{
+		console.log(JSON.parse(body.toString()))
+		const data = JSON.parse(body.toString())
+		return res.json({data})
+		})
 })
 
 app.listen(port, () =>{

@@ -1,0 +1,47 @@
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+
+h1, h2, h3, h4 {
+	color: yellow;
+}
+
+body {
+	background-color: black;
+}
+
+#header
+{
+ margin:0px auto;
+ padding:0px;
+ text-align:center;
+ height:70px;
+ line-height:70px;
+}
+#header li
+{
+ display:inline-block;
+ margin-right:25px;
+ font-size:17px;
+ color:#ebeb00;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+#credits{
+	color:white;
+}
+
+#header #site_name
+{
+ text-align:left;
+ font-size:35px;
+}
