@@ -47,6 +47,19 @@ app.get('/rest/expertises/:id', async(req, res) =>{
 	})
 })
 
+app.get('/rest/expertises_skills/:id', async(req, res) =>{
+	const response = fetch("https://api.intra.42.fr/v2/users/" + req.params.id, opt_get, (error, meta, body)=>{
+		let data = JSON.parse(body.toString())
+		let skills = {};
+		let expertises = {};
+			data.cursus_users.filter(cursus => cursus.skills && cursus.skills[0]).forEach(cursus => {
+				skills[cursus.cursus.name] = cursus.skills;
+			});
+			expertises = data.expertises_users;
+			res.send({skills: skills, expertises: expertises});
+	})
+})
+
 app.get('/index?*', async(req, res) =>{
 	let index = req.url.indexOf("?")
 	acs_token = req.url.substring(index + 6, req.url.length)
