@@ -2,8 +2,14 @@
 
 Proyecto hecho para la segunda prueba de Malaga y Barcelona.
 
-## Aclaraciones:
-Después de demasiado tiempo durante la prueba intentando hacer que funcione como una API rest  no lo consigo. Me quedan 20 minutos pero no pierdo la esperanza.
+## Endpoints:
+Para acceder a estos antes debes entrar por el navegador y autenticarte. Después, coge tu herramienta preferida (probado con postman) y llama los siguientes endpoints:
+
+1. GET localhost:3000/rest/expertises/[login or ID] -> Devuelve en JSON las expertises de un usuario.
+2. GET localhost:3000/rest/personal/[login or ID] -> Devuelve en JSON la info de un usuario.
+3. GET localhost:3000/rest/sch_record/[login or ID] -> Devuelve en JSON la info de los proyectos hechos por un usuario.
+
+Si tienes problemas en algun momento con el token o caduca, pulsa en el logo de inicio o entra en http://localhost:3000. Éste se actualizará automáticamente.
 
 ## Uso en (MacOX):
 
