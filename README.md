@@ -8,6 +8,7 @@ Para acceder a estos antes debes entrar por el navegador y autenticarte. Despué
 1. GET localhost:3000/rest/expertises/[login or ID] -> Devuelve en JSON las expertises de un usuario.
 2. GET localhost:3000/rest/personal/[login or ID] -> Devuelve en JSON la info de un usuario.
 3. GET localhost:3000/rest/sch_record/[login or ID] -> Devuelve en JSON la info de los proyectos hechos por un usuario.
+4. GET localhost:3000/rest/expertises_skills/:id -> Devuelve expretises y skills pero sin nombre las expertises.
 
 Si tienes problemas en algun momento con el token o caduca, pulsa en el logo de inicio o entra en http://localhost:3000. Éste se actualizará automáticamente.
 
